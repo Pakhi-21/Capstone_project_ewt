@@ -1,0 +1,413 @@
+@import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Amaranth&family=Concert+One&family=Mochiy+Pop+One&family=Montserrat:wght@100..900&family=Pacifico&family=Permanent+Marker&family=Sixtyfour+Convergence&family=Ubuntu&display=swap');
+
+/*
+body {
+    font-family: "Montserrat", sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    background-color: #f4f4f4;
+}
+
+.container {
+    display: flex;
+    width: 100%;
+}
+
+/* Sidebar */
+/*.sidebar {
+    width: 250px;
+    background-color: #157F7F;
+    color: white;
+    height: 100vh;
+    padding: 20px;
+    position: fixed;
+}
+
+.sidebar h2 {
+    text-align: center;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    padding: 10px;
+    margin: 10px 0;
+    text-align: left;
+}
+
+.sidebar ul li a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    border-radius: 5px;
+    flex-shrink: 0;
+}
+
+.sidebar ul li a:hover {
+    background-color: #23D5D5;
+}
+
+/* Main Content */
+/*.main-content {
+    margin-left: 270px;
+    padding: 20px;
+    width: 100%;
+}
+
+.emp-list{
+    margin: 10px;
+    padding:10px;
+}
+
+.filters{
+    margin: 10px;
+    padding: 10px;
+    display: flex;
+}
+
+.filter-content{
+    margin: 5px;
+    padding: 5px;
+    color: #157F7F;
+    font-weight:600;
+}
+
+select{
+    padding: 5px;
+    margin: 5px;
+    border-radius: 2px;
+}
+
+h1 {
+    color: #333;
+    margin: 10px;
+    padding: 10px;
+}
+
+h2{
+    color: #23D5D5;   
+}
+
+button {
+    background-color:#39AAAA;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+
+button:hover {
+    background-color: #157F7F;
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    padding: 8px;
+    border-bottom: 2px solid #ddd;
+    border-radius: 5px;
+    text-align: left;
+}
+
+
+/* for forms */
+/*#editEmployeeForm, #employeeForm  {
+    display:none;
+    padding: 10px;
+    margin: 10px;
+}
+
+#editEmployeeForm.show {
+  display: block;
+}
+
+
+/* Responsive Design */
+/*@media (max-width: 768px) {
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+        padding: 10px;
+        text-align: center;
+    }
+
+    .main-content {
+        margin-left: 0;
+        width: 100%;
+        padding: 15px;
+    }
+
+    .filters {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+}
+
+@media (max-width: 500px) {
+    .sidebar ul li {
+        text-align: center;
+    }
+
+    button {
+        width: 100%;
+    }
+
+    input, select {
+        width: 100%;
+    }
+}
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Amaranth&family=Concert+One&family=Mochiy+Pop+One&family=Montserrat:wght@100..900&family=Pacifico&family=Permanent+Marker&family=Sixtyfour+Convergence&family=Ubuntu&display=swap');
+
+
+body {
+    font-family: "Montserrat", sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    background-color: #f4f4f4;
+}
+
+.container {
+    display: flex;
+    width: 100%;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 250px;
+    background-color: #157F7F;
+    color: white;
+    height: 100vh;
+    padding: 20px;
+    position: fixed;
+}
+
+.sidebar h2 {
+    text-align: center;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    padding: 10px;
+    margin: 10px 0;
+    text-align: left;
+}
+
+.sidebar ul li a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    border-radius: 5px;
+    flex-shrink: 0;
+}
+
+.sidebar ul li a:hover {
+    background-color: #23D5D5;
+}
+
+/* Main Content */
+.main-content {
+    margin-left: 270px;
+    padding: 20px;
+    width: 100%;
+}
+
+.emp-list{
+    margin: 10px;
+    padding:10px;
+}
+
+.filters{
+    margin: 10px;
+    padding: 10px;
+    display: flex;
+}
+
+.filter-content{
+    margin: 5px;
+    padding: 5px;
+    color: #157F7F;
+    font-weight:600;
+}
+
+select{
+    padding: 5px;
+    margin: 5px;
+    border-radius: 2px;
+}
+
+h1 {
+    color: #333;
+    margin: 10px;
+    padding: 10px;
+}
+
+h2{
+    color: #23D5D5;   
+}
+
+button {
+    background-color:#39AAAA;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+
+button:hover {
+    background-color: #157F7F;
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    padding: 8px;
+    border-bottom: 2px solid #ddd;
+    border-radius: 5px;
+    text-align: left;
+}
+
+form label {
+    display: block;
+    margin-top: 10px;
+    font-weight: 600;
+    color: #157F7F;
+}
+
+form input {
+    width: 90%;
+    padding: 10px;
+    margin: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+/* for forms */
+#editEmployeeForm, #employeeForm  {
+    display:none;
+    padding: 10px;
+    margin: 15px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    width: 400px;
+}
+
+#editEmployeeForm.show {
+  display: block;
+}
+
+
+/* Responsive tables & layout */
+@media (max-width: 768px) {
+    .filters {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .sidebar {
+        position: static;
+    }
+
+    .main-content {
+        margin-left: 0;
+        padding: 15px;
+    }
+
+    .sidebar ul li {
+        margin: 5px 0;
+    }
+
+    table, thead, tbody, th, td, tr {
+        display: block;
+    }
+
+    thead {
+        display: none;
+    }
+
+    tr {
+        margin-bottom: 15px;
+        background-color: white;
+        padding: 10px;
+        border-radius: 10px;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+
+    td {
+        padding: 8px;
+        position: relative;
+    }
+
+    td::before {
+        content: attr(data-label);
+        position: absolute;
+        left: 10px;
+        font-weight: bold;
+        color: #157F7F;
+    }
+}
+
+/* Smallest screen enhancements */
+@media (max-width: 480px) {
+    h1, h2 {
+        font-size: 20px;
+        text-align: center;
+    }
+
+    button {
+        width: 100%;
+        padding: 12px;
+    }
+
+    input, select {
+        width: 100%;
+        font-size: 14px;
+    }
+
+    .filter-content {
+        width: 100%;
+        text-align: center;
+    }
+}

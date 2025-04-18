@@ -1,0 +1,43 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Wellness Tracker</title>
+    <link rel="stylesheet" href="css/create-edit-survey.css">
+    <script src="js/admin-edit-survey.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Edit Survey</h1>
+        <form id="editSurveyForm">
+            <input type="hidden" id="surveyId">
+
+            <label for="title">Title:</label>
+            <input type="text" id="title" required>
+
+            <label for="description">Description:</label>
+            <textarea id="description" required></textarea>
+
+            <label for="startDate">Start Date & Time:</label>
+            <input type="datetime-local" id="startDate" required>
+
+            <label for="endDate">End Date & Time:</label>
+            <input type="datetime-local" id="endDate" required>
+
+            <label for="questions">Questions (comma separated):</label>
+            <textarea id="questions" required></textarea>
+
+            <label for="status">Status:</label>
+            <select id="status">
+                <option value="true">Active</option>
+                <option value="false">Inactive</option>
+            </select>
+
+            <button type="submit">Update</button>
+            <button type="button" id="cancelEdit">Cancel</button>
+        </form>
+    </div>
+</body>
+</html>

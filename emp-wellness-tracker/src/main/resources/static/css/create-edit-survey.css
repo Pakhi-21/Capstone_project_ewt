@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Amaranth&family=Concert+One&family=Mochiy+Pop+One&family=Montserrat:wght@100..900&family=Pacifico&family=Permanent+Marker&family=Sixtyfour+Convergence&family=Ubuntu&display=swap');
+
+
+body {
+    font-family: "Montserrat", sans-serif;
+    background-color: #f8f9fa;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Container */
+.container {
+    background-color: #fff;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    width: 500px;
+    text-align: center;
+}
+
+/* Heading */
+h1 {
+    color: #157F7F;
+    font-size: 26px;
+    margin-bottom: 20px;
+}
+
+/* Form Styling */
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Labels */
+label {
+    font-weight: bold;
+    color: #333;
+    align-self: flex-start;
+    margin-top: 10px;
+}
+
+/* Input Fields & Textarea */
+input, textarea, select {
+    width: 90%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+/* Textarea */
+textarea {
+    height: 80px;
+    resize: none;
+}
+
+/* Question Container */
+#questionContainer {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Add Question Button */
+#addQuestion {
+    background-color: #23D5D5;
+    color: #fff;
+    font-weight: bold;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+    width: 50%;
+}
+
+#addQuestion:hover {
+    background-color: #28afaf;
+}
+
+/* Buttons */
+button {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+/* Create Survey Button */
+button{
+    background-color: #157F7F;
+    color: #fff;
+    font-weight: bold;
+}
+
+button:hover {
+    background-color: #28afaf;
+}
+
+/* Responsive Design */
+@media (max-width: 500px) {
+    .container {
+        width: 95%;
+        padding: 15px;
+    }
+    input, textarea, select, button {
+        font-size: 14px;
+        padding: 8px;
+    }
+}

@@ -1,0 +1,43 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Wellness Tracker</title>
+    <link rel="stylesheet" href="css/report.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.30/jspdf.plugin.autotable.min.js"></script>
+
+</head>
+<body>
+    <div class="container">
+        <h2>Employee Wellness Report</h2>
+
+        <div id="employeeDetails">
+            <h3>Employee ID: <span id="employeeId"></span></h3>
+            <h3>Employee Name: <span id="employeeName"></span></h3>
+            <h3>Department: <span id="department"></span></h3>
+            <h4>Overall Health Score: <span id="overallHealth"></span> / 5</h4>
+            <p id="wellnessMessage" class="message"></p>
+        </div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Survey Title</th>
+                    <th>Wellness Score</th>
+                </tr>
+            </thead>
+            <tbody id="reportTableBody">
+                <!-- Reports will be inserted dynamically -->
+            </tbody>
+        </table>
+
+        <button id =downloadPdf onclick="downloadPDF()" class="btn">Download Report (PDF)</button>
+    </div>
+</body>
+
+<script src="js/report.js"></script>
+</html>
+
