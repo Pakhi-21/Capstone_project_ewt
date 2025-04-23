@@ -29,7 +29,7 @@ const cancelEditBtn = document.getElementById("cancelEdit");
             document.getElementById("title").value = survey.title;
             document.getElementById("description").value = survey.description;
 
-            // Convert date format to 'YYYY-MM-DDTHH:mm'
+            
             document.getElementById("startDate").value = new Date(survey.startDate).toISOString().slice(0, 16);
             document.getElementById("endDate").value = new Date(survey.endDate).toISOString().slice(0, 16);
 

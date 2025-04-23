@@ -5,7 +5,6 @@ document.addEventListener("DOMContentLoaded", () => {
     document.getElementById("locationFilter").addEventListener("change", applyFilters);
 });
 
-// Store fetched employee data
 let employeesData = []; 
 
 async function fetchEmployees() {
@@ -21,7 +20,7 @@ async function fetchEmployees() {
 // Function to display employees
 function displayEmployees(filteredData) {
     const tableBody = document.getElementById("employeeTableBody");
-    tableBody.innerHTML = ""; // Clear previous data
+    tableBody.innerHTML = ""; 
 
     if (filteredData.length === 0) {
         tableBody.innerHTML = "<tr><td colspan='5'>No employees found</td></tr>";

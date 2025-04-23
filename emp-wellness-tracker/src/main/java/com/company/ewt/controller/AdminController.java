@@ -40,7 +40,7 @@ public class AdminController {
     // Create a new employee
     @PostMapping("/employees")
     public ResponseEntity<Employee> createEmployee(@RequestBody Employee employee) {
-        Employee savedEmployee = employeeService.registerEmployee(employee);
+        Employee savedEmployee = employeeService.adminRegisterEmployee(employee);
         return ResponseEntity.status(HttpStatus.CREATED).body(savedEmployee);
     }
 

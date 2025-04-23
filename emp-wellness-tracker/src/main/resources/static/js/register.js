@@ -9,12 +9,19 @@ signup.addEventListener("click", async () => {
             const location = document.getElementById("location").value.trim();
                     
              // Regular expressions
+            const nameRegex = /^[A-Za-z\s]+$/;
             const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
             const passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/;
 
 
             if (!name || !email || !password || !department || !location) {
                 alert("Please fill in all fields.");
+                return;
+            }
+            
+            //validate name format
+            if(!nameRegex.test(name)) {
+                alert("Please enter a valid name");
                 return;
             }
 
@@ -38,6 +45,12 @@ signup.addEventListener("click", async () => {
                     headers: { "Content-Type": "application/json" },
                     body: JSON.stringify({ name, email, password, department, location })
                 });
+
+                if (!response.ok) {
+                    const errorData = await response.json();
+                    alert(errorData.message || "Registration failed. Please try again.");
+                    return;
+                }
 
                 const data = await response.json();
                 alert(data.message);

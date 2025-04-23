@@ -21,26 +21,18 @@ signin.addEventListener("click", async () => {
             body: JSON.stringify({ email, password })
         });
 
-        if (!response.ok) {
-            alter("Server error. Please try again.");
-            return;
-        }
-
         const data = await response.json();
 
         // Check if login is successful
-        if (data.message === "Login successful!") {
-            
-            // Store user details in session storage
+        if (response.ok && data.message === "Login successful!") {
             sessionStorage.setItem("userId", data.userId);
             sessionStorage.setItem("isAdmin", data.isAdmin);
-
-            // Redirect user based on their role
             window.location.href = data.isAdmin ? "admin-dashboard.html" : "user-dashboard.html";
         } else {
             alert("Invalid credentials! Please try again.");
         }
     } catch (error) {
+        console.error("Login Error:", error);
         alert("Something went wrong! Please try again later.");
     }
 });

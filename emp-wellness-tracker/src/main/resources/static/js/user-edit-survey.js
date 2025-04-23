@@ -70,8 +70,6 @@ document.getElementById("survey-form").addEventListener("submit", async function
         responses: updatedAnswers.map(answer => answer.trim()).join(",")  // Convert array to string
     };
 
-    console.log("Updated Payload: ", JSON.stringify(updatePayload));
-
 
     try {
         const response = await fetch(`${API_BASE_URL}/responses/${responseId}`, {

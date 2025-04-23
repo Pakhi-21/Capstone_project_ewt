@@ -40,7 +40,6 @@
                 
             };
             
-            console.log("🚀 Sending Data to Backend:", JSON.stringify(surveyData));
             
             try {
                 const response = await fetch(API_BASE_URL, {

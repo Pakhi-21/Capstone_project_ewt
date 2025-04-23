@@ -4,7 +4,20 @@ const API_BASE_URL = "http://localhost:8080/api";
 const logoutBtn=document.getElementById("logout");
 const userId = sessionStorage.getItem("userId");
 
+    // load active or past survey 
+    document.addEventListener("DOMContentLoaded", () => {
+         if (!userId) {
+        alert("User not found. Please login again.");
+        window.location.href = "login.html";
+        return;
+    }
+        fetchUserName();
+        fetchActiveSurveys();
+        fetchPastSurveys();
+        setupResponsiveNav();
+    });
 
+    
     // Function to fetch user data and display name
     async function fetchUserName() {
         try {
@@ -25,18 +38,6 @@ const userId = sessionStorage.getItem("userId");
             document.getElementById("user-name").textContent = "User";
         }
     }
-    // load active or past survey 
-    document.addEventListener("DOMContentLoaded", () => {
-         if (!userId) {
-        alert("User not found. Please login again.");
-        window.location.href = "login.html";
-        return;
-    }
-        fetchUserName();
-        fetchActiveSurveys();
-        fetchPastSurveys();
-        setupResponsiveNav();
-    });
 
     
     // Set up responsive navigation for mobile devices

@@ -12,7 +12,7 @@ const API_BASE_URL = "http://localhost:8080/api/admin/surveys";
             const surveys = await response.json();
 
             surveyTableBody.innerHTML = "";
-
+  
             surveys.forEach(survey => {
                 const startDate = survey.startDate ? new Date(survey.startDate).toLocaleDateString() : "N/A";
                 const endDate = survey.endDate ? new Date(survey.endDate).toLocaleDateString() : "N/A";

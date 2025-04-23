@@ -14,27 +14,38 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
-function fetchEmployeeReport(employeeId) {
-    fetch(`http://localhost:8080/api/reports/employee/${employeeId}`)
-        .then(response => response.json())
-        .then(data => {
-            document.getElementById("employeeId").innerText = data.employeeId;
-            document.getElementById("employeeName").innerText = data.employeeName;
-            document.getElementById("department").innerText = data.department;
-            document.getElementById("overallHealth").innerText = data.overallWellnessScore.toFixed(1);
+async function fetchEmployeeReport(employeeId) {
+    try {
+        const response = await fetch(`http://localhost:8080/api/reports/employee/${employeeId}`);
+        
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
 
-            setWellnessMessage(data.employeeName, data.overallWellnessScore);
+        const data = await response.json();
 
-            const tableBody = document.getElementById("reportTableBody");
-            tableBody.innerHTML = "";
+        // Populate employee details
+        document.getElementById("employeeId").innerText = data.employeeId;
+        document.getElementById("employeeName").innerText = data.employeeName;
+        document.getElementById("department").innerText = data.department;
+        document.getElementById("overallHealth").innerText = data.overallWellnessScore.toFixed(1);
 
-            data.surveyScores.forEach(survey => {
-                const row = document.createElement("tr");
-                row.innerHTML = `<td>${survey.surveyTitle}</td><td>${survey.wellnessScore.toFixed(1)}</td>`;
-                tableBody.appendChild(row);
-            });
-        })
-        .catch(error => console.error("Error fetching report:", error));
+        // Set wellness message based on the score
+        setWellnessMessage(data.employeeName, data.overallWellnessScore);
+
+        // Populate survey scores in the table
+        const tableBody = document.getElementById("reportTableBody");
+        tableBody.innerHTML = "";
+
+        data.surveyScores.forEach(survey => {
+            const row = document.createElement("tr");
+            row.innerHTML = `<td>${survey.surveyTitle}</td><td>${survey.wellnessScore.toFixed(1)}</td>`;
+            tableBody.appendChild(row);
+        });
+
+    } catch (error) {
+        console.error("Error fetching report:", error);
+    }
 }
 
 function setWellnessMessage(employeeName, score) {
@@ -117,7 +128,7 @@ document.querySelectorAll("#reportTableBody tr").forEach(row => {
 
 // Add Table to PDF (Below the Message)
 doc.autoTable({
-    startY: 90 + wrappedMessage.length * 5,  // Adjust table position dynamically
+    startY: 90 + wrappedMessage.length * 5,  
     head: [tableHeader],
     body: tableRows,
     theme: "striped",

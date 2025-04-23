@@ -18,10 +18,18 @@ public class EmployeeService {
     private EmployeeRepository employeeRepository;
 
     // Register employee with hashed password
-    public Employee registerEmployee(Employee employee) {
+    public String registerEmployee(Employee employee) {
+        Optional<Employee> existingEmployee = employeeRepository.findByEmail(employee.getEmail());
+
+        if (existingEmployee.isPresent()) {
+            return "Email already exists!";
+        }
+    
         String hashedPassword = BCrypt.hashpw(employee.getPassword(), BCrypt.gensalt(10)); // Hash password
         employee.setPassword(hashedPassword); 
-        return employeeRepository.save(employee);
+        employeeRepository.save(employee);
+
+        return "User registered successfully!";
     }
 
     // Login authentication with password verification
@@ -93,6 +101,12 @@ public class EmployeeService {
         employee.setAdmin(true);  
         return employeeRepository.save(employee);
     }
+
+    public Employee adminRegisterEmployee(Employee employee) {
+        String hashedPassword = BCrypt.hashpw(employee.getPassword(), BCrypt.gensalt(10)); // Hash password
+        employee.setPassword(hashedPassword); 
+        return employeeRepository.save(employee);
+    } 
 
     
     } 

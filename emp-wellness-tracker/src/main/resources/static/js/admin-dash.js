@@ -113,11 +113,6 @@ const API_BASE_URL = "http://localhost:8080/api/admin";
             fetchEmployees();
         }
 
-
-        function openSurveyPage() {
-            window.location.href = "admin-survey.html";
-        }
-
         function toggleForm() {
         employeeFormContainer.style.display = employeeFormContainer.style.display === "none" ? "block" : "none";
         }

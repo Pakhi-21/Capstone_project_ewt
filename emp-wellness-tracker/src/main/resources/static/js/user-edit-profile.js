@@ -15,17 +15,13 @@
         async function loadProfile() {
             try {
        
-                // Fetch user details from API
                 const response = await fetch(`http://localhost:8080/api/employees/${userId}`);
         
-                // Check if the response is successful
                 if (!response.ok) {
                   throw new Error("Failed to fetch profile data");
                 }
 
                 const data = await response.json();
-
-                // Populate the form fields with existing user data
                 document.getElementById("name").value = data.name;
                 document.getElementById("email").value = data.email;
                 document.getElementById("department").value = data.department;
